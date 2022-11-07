@@ -14,31 +14,31 @@
     "react-scripts": "5.0.1",
     "web-vitals": "^2.1.4"
   },
-    "author": {
+  "author": {
     "name": "Stefan Pietzonke",
-    "url" : "https://www.midnight-koder.net",
-    "email" : "spietzonke@gmail.com",
+    "url": "https://www.midnight-koder.net",
+    "email": "spietzonke@gmail.com",
     "license": "GPL"
-    },
+  },
   "build": {
-     "appId": "net.midnight-koder.rpn-calc-electron",
-      "productName": "My Electron App",
-      "files": ["build/**/*", "node_modules/**/*"],
-     "directories": {
-       "buildResources": "public"
-     },
-     "mac": {
-       "target": "dmg"
-     },
-     "win": {
-       "target": "nsis"
-     },
+    "appId": "net.midnight-koder.rpn-calc-electron",
+    "productName": "My Electron App",
+    "files": [
+      "build/**/*",
+      "node_modules/**/*"
+    ],
+    "directories": {
+      "buildResources": "public"
+    },
+    "mac": {
+      "target": "dmg"
+    },
+    "win": {
+      "target": "nsis"
+    },
     "linux": {
-        "target": "rpm",
-        "target": "deb",
-        "target": "snap",
-        "target": "AppImage"
-     }
+      "target": "AppImage"
+    }
   },
   "scripts": {
     "start": "react-scripts start",
@@ -46,9 +46,9 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "electron:start": "concurrently -k \"cross-env BROWSER=none yarn start\" \"wait-on http://localhost:3000 && electronmon .\"",
-    "electron:package:mac": "yarn build && electron-builder -m -c.extraMetadata.main=build/electron.js",
-   "electron:package:win": "yarn build && electron-builder -w -c.extraMetadata.main=build/electron.js",
-   "electron:package:linux": "yarn build && electron-builder -l -c.extraMetadata.main=build/electron.js"
+    "electron:package:mac": "yarn build && electron-builder -p -m -c.extraMetadata.main=build/electron.js",
+    "electron:package:win": "yarn build && electron-builder -p -w -c.extraMetadata.main=build/electron.js",
+    "electron:package:linux": "yarn build && electron-builder -p -l -c.extraMetadata.main=build/electron.js"
   },
   "eslintConfig": {
     "extends": [
@@ -73,7 +73,7 @@
   "devDependencies": {
     "concurrently": "^7.5.0",
     "cross-env": "^7.0.3",
-    "electron": "^21.2.0",
+    "electron": "^21.2.2",
     "electron-builder": "^23.6.0",
     "electronmon": "^2.0.2",
     "wait-on": "^6.0.1"

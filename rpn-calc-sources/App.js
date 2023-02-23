@@ -340,7 +340,7 @@ function parse_rpolish(postfix_line) {
             break
         }
         if (ch !== ' ' && isOperator(ch) === 0) {
-            // ch is not space or operator, get variable name
+            // ch is not space or operator, get number
             pos = 0
             // printf ("ch start: '%c'\n", ch);
             get_var = 0
@@ -354,7 +354,11 @@ function parse_rpolish(postfix_line) {
                         parse = 0
                     }
                 } else {
-                    buf[pos] = ch
+                    if (ch === '_') {
+                        buf[pos] = '-'
+                    } else {
+                        buf[pos] = ch
+                    }
                     pos++
 
                     // printf ("ch var: '%c'\n", ch);
@@ -560,6 +564,7 @@ class App extends React.Component {
     const info_text_5 = 'log, log10, log1p, log2, exp';
     const info_text_6 = 'Two argument functions: atan2 (y, x), pow (x, y)';
     const info_text_7 = 'example: 30 sin =, 2 8 pow =';
+    const info_text_8 = 'For negative numbers use _ as minus sign!'
     const result = <p id="math_output"></p>;
     return (
       <><div style={{ marginTop: "1%", marginLeft: "2%", textAlign: "left" }}>
@@ -570,7 +575,8 @@ class App extends React.Component {
         {info_text_4} <br /> 
         {info_text_5} <br /> <br />
         {info_text_6} <br />
-        {info_text_7} <br /> <br />
+        {info_text_7} <br />
+        {info_text_8} <br /> <br />
         <input
           value={this.state.inputText}
           style={{width: '95%'}}

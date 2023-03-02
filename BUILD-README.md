@@ -14,10 +14,16 @@ $ cd rpn-calc-electron
 $ yarn add -D concurrently cross-env electron electron-builder electronmon wait-on
 ```
 
- Now copy the files in this directory to the projects folder we just created.
+ Now copy the files in this directory to the projects folder we just created. Rename the "rpn-calc-sources" directory to "src".
  
  You can list the availaible scripts by:
  
 ```
 $ npm run
+```
+
+To run a build for a Linux Appimage and Windows App EXE:
+
+```
+node_modules/.bin/electron-builder -wl
 ```

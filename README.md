@@ -9,4 +9,4 @@ The build instructions are in: BUILD-README.md and in REACT-README.md.
 
 You can download the binaries for Windows and Linux on my [Ko-fi Shop](https://ko-fi.com/koder77) for free. <br>
 
-A live demo is on my [blog: RPN calculator](https://midnight-coding.de/blog/misc/) <br>
+A live demo is on my [blog: RPN calculator](https://midnight-coding.de/blog/projects/) <br>
